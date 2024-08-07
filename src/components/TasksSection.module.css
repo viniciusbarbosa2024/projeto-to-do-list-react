@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+.TasksSectionContent {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    padding: 10px;
+}
+
+.divTask {
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 20px;
+
+    background-color: gray;
+}
+
+.conclude {
+    padding: 4px 7px;
+    margin-right: 7px;
+
+    background-color: rgb(2, 158, 2);
+} 
+
+.delete {
+    padding: 4px 7px;
+
+    background-color: red;
+}
