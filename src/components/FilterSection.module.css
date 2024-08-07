@@ -1,0 +1,15 @@
+.FilterSectionContent {
+    padding: 10px 10px 30px 10px;
+
+    border-bottom: 1px solid white;
+}
+
+.title {
+    margin-bottom: 10px;
+}
+
+.select {
+    width: 200px;
+    
+    padding: 5px;
+}
