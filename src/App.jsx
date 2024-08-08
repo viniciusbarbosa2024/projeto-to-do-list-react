@@ -29,6 +29,8 @@ const App = () => {
     },
   ])
   
+  const [filter,setFilter] = useState('')
+
   //Função para adicionar tarefas
   function addTask(taskName) {
     setTasks([...tasks,{name: taskName,status: 'Pendente'}])
@@ -59,12 +61,16 @@ const App = () => {
     
   }
 
+  function getFilter(filterObtained) {
+    setFilter(filterObtained)
+  }
+
   return (
     <main>
       <h1>Lista de Tarefas</h1>
       <SearchSection/>
-      <FilterSection/>
-      <TasksSection tasks={tasks} deleteTask={deleteTask} setTaskStatus={setTaskStatus}/>
+      <FilterSection getFilter={getFilter}/>
+      <TasksSection tasks={tasks} deleteTask={deleteTask} setTaskStatus={setTaskStatus} filter={filter}/>
       <CreateTask addTask={addTask}/>
       
     </main>
