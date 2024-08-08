@@ -21,15 +21,31 @@
     padding: 4px 7px;
     margin-right: 7px;
 
+    cursor: pointer;
+    border: 1px solid black;
+    
     background-color: rgb(2, 158, 2);
 } 
 
 .delete {
     padding: 4px 7px;
 
+    cursor: pointer;
+    border: 1px solid black;
+
     background-color: red;
 }
 
 .taskCompleted {
     text-decoration: line-through;
+}
+
+.pendant {
+    padding: 4px 7px;
+    margin-right: 7px;
+
+    cursor: pointer;
+    border: 1px solid black;
+    
+    background-color: rgb(248, 98, 98);
 }

@@ -9,18 +9,21 @@ export const TasksSection = ({tasks,deleteTask,concludeTask}) => {
         }
     }
 
+    //Estilizar o botão de definir status da tarefa
     function stylizeCompletionButton(index) {
         if (tasks[index].status == 'Pendente') {
             return styles.conclude
+        } else if (tasks[index].status == 'Concluída') {
+            return styles.pendant
         }
     }
 
-    //Definir se o botão de definir status vai exibir a opção de marcar tarefa como concluída ou como não concluída
+    //Definir se o botão de definir status vai exibir a opção de marcar tarefa como concluída ou como pendente
     function setStatusButton(index) {
         if (tasks[index].status == 'Pendente') {
-            return 'Concluída'
+            return 'Marcar como concluída'
         } else {
-            return 'Não Concluída'
+            return 'Marcar como pendente'
         }
     }
   
