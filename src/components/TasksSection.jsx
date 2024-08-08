@@ -8,6 +8,21 @@ export const TasksSection = ({tasks,deleteTask,concludeTask}) => {
             return styles.taskCompleted
         }
     }
+
+    function stylizeCompletionButton(index) {
+        if (tasks[index].status == 'Pendente') {
+            return styles.conclude
+        }
+    }
+
+    //Definir se o botão de definir status vai exibir a opção de marcar tarefa como concluída ou como não concluída
+    function setStatusButton(index) {
+        if (tasks[index].status == 'Pendente') {
+            return 'Concluída'
+        } else {
+            return 'Não Concluída'
+        }
+    }
   
     return (
     <div className={styles.TasksSectionContent}>
@@ -16,7 +31,7 @@ export const TasksSection = ({tasks,deleteTask,concludeTask}) => {
                 <div className={styles.divTask}>
                     <span className={stylizeTaskName(index)}>{element.name}</span>
                     <div>
-                        <button className={styles.conclude} onClick={()=> concludeTask(index)}>Concluída</button>
+                        <button className={stylizeCompletionButton(index)} onClick={()=> concludeTask(index)}>{setStatusButton(index)}</button>
                         <button className={styles.delete} onClick={() => deleteTask(index)}>x</button>
                     </div>
                 </div>

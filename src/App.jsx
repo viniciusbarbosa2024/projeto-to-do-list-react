@@ -31,7 +31,7 @@ const App = () => {
   
   //Função para adicionar tarefas
   function addTask(taskName) {
-    setTasks([...tasks,{name: taskName}])
+    setTasks([...tasks,{name: taskName,status: 'Pendente'}])
   }
 
   //Função para deletar tarefas
