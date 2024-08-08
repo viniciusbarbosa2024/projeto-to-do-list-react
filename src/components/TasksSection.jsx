@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './TasksSection.module.css'
 
-export const TasksSection = ({tasks,deleteTask,concludeTask}) => {
+export const TasksSection = ({tasks,deleteTask,setTaskStatus}) => {
     //Função para estilizar exibição do nome da tarefa
     function stylizeTaskName(index) {
         if (tasks[index].status == 'Concluída') {
@@ -34,7 +34,12 @@ export const TasksSection = ({tasks,deleteTask,concludeTask}) => {
                 <div className={styles.divTask}>
                     <span className={stylizeTaskName(index)}>{element.name}</span>
                     <div>
-                        <button className={stylizeCompletionButton(index)} onClick={()=> concludeTask(index)}>{setStatusButton(index)}</button>
+                        <button className={stylizeCompletionButton(index)} onClick={()=> setTaskStatus(index)}>
+
+                            {setStatusButton(index)}
+                            
+                        </button>
+
                         <button className={styles.delete} onClick={() => deleteTask(index)}>x</button>
                     </div>
                 </div>

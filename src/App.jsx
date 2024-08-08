@@ -43,11 +43,20 @@ const App = () => {
   }
 
   //Função para marcar tarefa com concluída
-  function concludeTask(index) {
+  function setTaskStatus(index) {
     let newTaskList = [...tasks]
-    newTaskList[index].status = 'Concluída'
 
-    setTasks(newTaskList)
+    if (newTaskList[index].status == 'Pendente') {
+      newTaskList[index].status = 'Concluída'
+
+      setTasks(newTaskList)
+    } else if (newTaskList[index].status == 'Concluída') {
+      newTaskList[index].status = 'Pendente'
+
+      setTasks(newTaskList)
+    }
+
+    
   }
 
   return (
@@ -55,7 +64,7 @@ const App = () => {
       <h1>Lista de Tarefas</h1>
       <SearchSection/>
       <FilterSection/>
-      <TasksSection tasks={tasks} deleteTask={deleteTask} concludeTask={concludeTask}/>
+      <TasksSection tasks={tasks} deleteTask={deleteTask} setTaskStatus={setTaskStatus}/>
       <CreateTask addTask={addTask}/>
       
     </main>
