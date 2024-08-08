@@ -27,6 +27,7 @@ export const TasksSection = ({tasks,deleteTask,setTaskStatus,filter}) => {
         }
     }
 
+    //Função para definir o array de tarefas, considerando a aplicação dos filtros
     function getFilteredTaskArray() {
         if (filter == '') {
             return tasks
@@ -37,6 +38,7 @@ export const TasksSection = ({tasks,deleteTask,setTaskStatus,filter}) => {
         }
     }
 
+    //Variável que contém o array com as tarefas filtradas
     let filteredTasks = getFilteredTaskArray()
   
     return (
