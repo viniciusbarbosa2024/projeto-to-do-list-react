@@ -25,13 +25,17 @@ const App = () => {
     },
   ])
   
+  function addTask(taskName) {
+    setTasks([...tasks,{name: taskName}])
+  }
+
   return (
     <main>
       <h1>Lista de Tarefas</h1>
       <SearchSection/>
       <FilterSection/>
       <TasksSection tasks={tasks}/>
-      <CreateTask/>
+      <CreateTask addTask={addTask}/>
       
     </main>
   )
