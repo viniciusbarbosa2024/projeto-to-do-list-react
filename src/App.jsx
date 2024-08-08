@@ -9,19 +9,23 @@ import { CreateTask } from './components/CreateTask'
 const App = () => {
   const [tasks,setTasks] = useState([
     {
-      name: 'Estudar'
+      name: 'Estudar',
+      status: 'Pendente'
     },
 
     {
-      name: 'Trabalhar'
+      name: 'Trabalhar',
+      status: 'Concluída'
     },
 
     {
-      name: 'Almoçar'
+      name: 'Almoçar',
+      status: 'Pendente'
     },
 
     {
-      name: 'Jantar'
+      name: 'Jantar',
+      status: 'Pendente'
     },
   ])
   
@@ -36,12 +40,19 @@ const App = () => {
     setTasks(newTaskList)
   }
 
+  function concludeTask(index) {
+    let newTaskList = [...tasks]
+    newTaskList[index].status = 'Concluída'
+
+    setTasks(newTaskList)
+  }
+
   return (
     <main>
       <h1>Lista de Tarefas</h1>
       <SearchSection/>
       <FilterSection/>
-      <TasksSection tasks={tasks} deleteTask={deleteTask}/>
+      <TasksSection tasks={tasks} deleteTask={deleteTask} concludeTask={concludeTask}/>
       <CreateTask addTask={addTask}/>
       
     </main>

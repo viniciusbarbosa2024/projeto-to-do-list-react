@@ -29,3 +29,7 @@
 
     background-color: red;
 }
+
+.taskCompleted {
+    text-decoration: line-through;
+}
