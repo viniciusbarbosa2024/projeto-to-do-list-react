@@ -29,12 +29,19 @@ const App = () => {
     setTasks([...tasks,{name: taskName}])
   }
 
+  function deleteTask(index) {
+    let newTaskList = [...tasks]
+    newTaskList.splice(index,1)
+
+    setTasks(newTaskList)
+  }
+
   return (
     <main>
       <h1>Lista de Tarefas</h1>
       <SearchSection/>
       <FilterSection/>
-      <TasksSection tasks={tasks}/>
+      <TasksSection tasks={tasks} deleteTask={deleteTask}/>
       <CreateTask addTask={addTask}/>
       
     </main>

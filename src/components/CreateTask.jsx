@@ -9,11 +9,17 @@ export const CreateTask = ({addTask}) => {
         setTaskName(e.target.value)
     }
 
+    function clearInputAndAddTask() {
+        setTaskName('')
+        addTask(taskName)
+    }
+
     return (
     <div className={styles.CreateTaskContent}>
         <h2 className={styles.title}>Criar Tarefa</h2>
-        <input type="text" className={styles.input} onChange={updateTaskName}/>
-        <button className={styles.button} onClick={()=> addTask(taskName)}>Criar tarefa</button>
+        <input type="text" className={styles.input} onChange={updateTaskName} value={taskName}/> 
+        {/* Anotar sobre o value direto no input */}
+        <button className={styles.button} onClick={clearInputAndAddTask}>Criar tarefa</button>
     </div>
   )
 }
