@@ -29,10 +29,12 @@ const App = () => {
     },
   ])
   
+  //Função para adicionar tarefas
   function addTask(taskName) {
     setTasks([...tasks,{name: taskName}])
   }
 
+  //Função para deletar tarefas
   function deleteTask(index) {
     let newTaskList = [...tasks]
     newTaskList.splice(index,1)
@@ -40,6 +42,7 @@ const App = () => {
     setTasks(newTaskList)
   }
 
+  //Função para marcar tarefa com concluída
   function concludeTask(index) {
     let newTaskList = [...tasks]
     newTaskList[index].status = 'Concluída'
