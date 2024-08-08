@@ -4,6 +4,7 @@ import "./App.css"
 import { SearchSection } from './components/SearchSection'
 import { FilterSection } from './components/FilterSection'
 import { TasksSection } from './components/TasksSection'
+import { CreateTask } from './components/CreateTask'
 
 const App = () => {
   const [tasks,setTasks] = useState([
@@ -13,7 +14,15 @@ const App = () => {
 
     {
       name: 'Trabalhar'
-    }
+    },
+
+    {
+      name: 'Almoçar'
+    },
+
+    {
+      name: 'Jantar'
+    },
   ])
   
   return (
@@ -22,6 +31,7 @@ const App = () => {
       <SearchSection/>
       <FilterSection/>
       <TasksSection tasks={tasks}/>
+      <CreateTask/>
       
     </main>
   )

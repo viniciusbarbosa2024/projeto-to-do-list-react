@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.CreateTaskContent {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    padding: 10px;
+}
+
+.title {
+    margin-bottom: 10px;
+}
+
+.input {
+    width: 400px;
+    
+    padding: 8px;
+}
+
+.button {
+    width: 100px;
+
+    padding: 8px;
+}
