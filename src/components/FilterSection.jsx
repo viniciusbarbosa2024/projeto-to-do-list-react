@@ -7,8 +7,8 @@ export const FilterSection = () => {
       <h2 className={styles.title}>Filtrar</h2>
       <select className={styles.select}>
         <option value="">Todos</option>
-        <option value="">Concluídos</option>
-        <option value="">Pendentes</option>
+        <option value="Concluída">Concluídos</option>
+        <option value="Pendente">Pendentes</option>
       </select>
     </div>
   );

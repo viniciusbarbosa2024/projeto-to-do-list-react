@@ -42,7 +42,7 @@ const App = () => {
     setTasks(newTaskList)
   }
 
-  //Função para marcar tarefa com concluída
+  //Função para definir o status da tarefa (Concluída ou pendente)
   function setTaskStatus(index) {
     let newTaskList = [...tasks]
 
