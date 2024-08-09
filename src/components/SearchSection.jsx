@@ -11,7 +11,7 @@ export const SearchSection = ({getValueFromSearchInput}) => {
   return (
     <div className={styles.SearchSectionContent}>
       <h2 className={styles.title}>Pesquisar</h2>
-      <input type="text" className={styles.input} onChange={sendInputValue}/>
+      <input type="text" className={styles.input} onChange={sendInputValue} placeholder="Pesquisar tarefa..."/>
     </div>
   );
 };

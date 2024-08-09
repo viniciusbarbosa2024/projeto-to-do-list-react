@@ -7,27 +7,7 @@ import { TasksSection } from './components/TasksSection'
 import { CreateTask } from './components/CreateTask'
 
 const App = () => {
-  const [tasks,setTasks] = useState([
-    {
-      name: 'Estudar',
-      status: 'Pendente'
-    },
-
-    {
-      name: 'Trabalhar',
-      status: 'Concluída'
-    },
-
-    {
-      name: 'Almoçar',
-      status: 'Pendente'
-    },
-
-    {
-      name: 'Jantar',
-      status: 'Pendente'
-    },
-  ])
+  const [tasks,setTasks] = useState([])
   
   const [filter,setFilter] = useState('')
   const [search, setSearch] = useState('')

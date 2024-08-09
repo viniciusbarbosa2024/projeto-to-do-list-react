@@ -25,7 +25,7 @@ export const CreateTask = ({addTask}) => {
     return (
     <div className={styles.CreateTaskContent}>
         <h2 className={styles.title}>Criar Tarefa</h2>
-        <input type="text" className={styles.input} onChange={updateTaskName} value={taskName}/> 
+        <input type="text" className={styles.input} onChange={updateTaskName} value={taskName} placeholder='Digite o nome da tarefa'/> 
         {/* Anotar sobre o value direto no input */}
         <button className={styles.button} onClick={taskNameValidation}>Criar tarefa</button>
     </div>
