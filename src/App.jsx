@@ -30,6 +30,7 @@ const App = () => {
   ])
   
   const [filter,setFilter] = useState('')
+  const [search, setSearch] = useState('')
 
   //Função para adicionar tarefas
   function addTask(taskName) {
@@ -61,16 +62,22 @@ const App = () => {
     
   }
 
+  //Função para atualizar o estado do filtro selecionado pelo usuário
   function getFilter(filterObtained) {
     setFilter(filterObtained)
+  }
+
+  //Função para atualizar o estado da pesquisa feita pelo usuário
+  function getValueFromSearchInput(searchObtained) {
+    setSearch(searchObtained)
   }
 
   return (
     <main>
       <h1>Lista de Tarefas</h1>
-      <SearchSection/>
+      <SearchSection getValueFromSearchInput = {getValueFromSearchInput}/>
       <FilterSection getFilter={getFilter}/>
-      <TasksSection tasks={tasks} deleteTask={deleteTask} setTaskStatus={setTaskStatus} filter={filter}/>
+      <TasksSection tasks={tasks} deleteTask={deleteTask} setTaskStatus={setTaskStatus} filter={filter} search={search}/>
       <CreateTask addTask={addTask}/>
       
     </main>

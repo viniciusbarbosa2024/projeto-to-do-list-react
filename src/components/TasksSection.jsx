@@ -1,19 +1,19 @@
 import React from 'react'
 import styles from './TasksSection.module.css'
 
-export const TasksSection = ({tasks,deleteTask,setTaskStatus,filter}) => {
+export const TasksSection = ({tasks,deleteTask,setTaskStatus,filter,search}) => {
     //Função para estilizar exibição do nome da tarefa
     function stylizeTaskName(index) {
-        if (filteredTasks[index].status == 'Concluída') {
+        if (displayedTasks[index].status == 'Concluída') {
             return styles.taskCompleted
         }
     }
 
     //Estilizar o botão de definir status da tarefa
     function stylizeCompletionButton(index) {
-        if (filteredTasks[index].status == 'Pendente') {
+        if (displayedTasks[index].status == 'Pendente') {
             return styles.conclude
-        } else if (filteredTasks[index].status == 'Concluída') {
+        } else if (displayedTasks[index].status == 'Concluída') {
             return styles.pendant
         }
     }
@@ -38,12 +38,25 @@ export const TasksSection = ({tasks,deleteTask,setTaskStatus,filter}) => {
         }
     }
 
+    //Função para definir o array de tarefas, considerando a pesquisa feita pelo usuário
+    function searchInTasks(filteredTasks,search) {
+        return filteredTasks.filter((element) => element.name.toLowerCase().includes(search) === true)
+    }
+
+    //Função para definir as tarefas a serem exibidas
+    function setArrayOfDisplayedTasks() {
+        let filteredTasks = getFilteredTaskArray()
+        let tasksAfterSearch = searchInTasks(filteredTasks,search)
+
+        return tasksAfterSearch
+    }
+
     //Variável que contém o array com as tarefas filtradas
-    let filteredTasks = getFilteredTaskArray()
+    let displayedTasks = setArrayOfDisplayedTasks()
   
     return (
     <div className={styles.TasksSectionContent}>
-        {filteredTasks.map((element,index) => {
+        {displayedTasks.map((element,index) => {
             return (                
                 <div className={styles.divTask}> 
                     <span className={stylizeTaskName(index)}>
