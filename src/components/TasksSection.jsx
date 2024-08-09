@@ -62,6 +62,8 @@ export const TasksSection = ({
 
   if (tasks.length == 0) {
     return <p className={styles.noTasks}>Ainda não há tarefas adicionadas</p>;
+  } else if (displayedTasks.length == 0) {
+    return <p className={styles.noTasks}>Nenhum resultado encontrado</p>
   } else {
     return (
       <div className={styles.TasksSectionContent}>
