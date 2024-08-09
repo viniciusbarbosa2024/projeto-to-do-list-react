@@ -49,3 +49,10 @@
     
     background-color: rgb(248, 98, 98);
 }
+
+.noTasks {  
+    padding: 20px;
+    
+    text-align: center;
+    font-size: 1.3em;
+}
