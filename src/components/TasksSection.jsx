@@ -45,7 +45,7 @@ export const TasksSection = ({
   //Função para definir o array de tarefas, considerando a pesquisa feita pelo usuário
   function searchInTasks(filteredTasks, search) {
     return filteredTasks.filter(
-      (element) => element.name.toLowerCase().includes(search) === true
+      (element) => element.name.toLowerCase().includes(search) === true || element.name.toUpperCase().includes(search) === true
     );
   }
 
